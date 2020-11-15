@@ -63,10 +63,11 @@ namespace GoProjectEditor
                     maptheme.Text = mapTheme.ToString();
                     mapstate.Text = mapState.ToString();
 
-                    var f1 = convertByteToString(bin.ReadBytes(0X80));
-                    showMapName("F1: " + f1);
-
-
+                    var mapBgFile = convertByteToString(bin.ReadBytes(0X80));
+                    showMapName("Bg File: " + mapBgFile);
+                    textBoxBackgroundFile.Text = mapBgFile;
+                    bin.ReadBytes(0X6D);
+                    //s
 
                     label4.Text = "Current_Read_Pos: " + stream.Position;
 

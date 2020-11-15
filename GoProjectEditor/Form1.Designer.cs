@@ -45,11 +45,15 @@ namespace GoProjectEditor
             this.label6 = new System.Windows.Forms.Label();
             this.mapPOSX = new System.Windows.Forms.TextBox();
             this.mapPOSY = new System.Windows.Forms.TextBox();
+            this.textBoxBackgroundFile = new System.Windows.Forms.TextBox();
+            this.bgFileLabel = new System.Windows.Forms.Label();
             this.groupMapInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupMapInfo
             // 
+            this.groupMapInfo.Controls.Add(this.bgFileLabel);
+            this.groupMapInfo.Controls.Add(this.textBoxBackgroundFile);
             this.groupMapInfo.Controls.Add(this.mapPOSY);
             this.groupMapInfo.Controls.Add(this.mapPOSX);
             this.groupMapInfo.Controls.Add(this.label6);
@@ -198,6 +202,22 @@ namespace GoProjectEditor
             this.mapPOSY.Size = new System.Drawing.Size(45, 20);
             this.mapPOSY.TabIndex = 10;
             // 
+            // textBoxBackgroundFile
+            // 
+            this.textBoxBackgroundFile.Location = new System.Drawing.Point(10, 198);
+            this.textBoxBackgroundFile.Name = "textBoxBackgroundFile";
+            this.textBoxBackgroundFile.Size = new System.Drawing.Size(172, 20);
+            this.textBoxBackgroundFile.TabIndex = 11;
+            // 
+            // bgFileLabel
+            // 
+            this.bgFileLabel.AutoSize = true;
+            this.bgFileLabel.Location = new System.Drawing.Point(7, 182);
+            this.bgFileLabel.Name = "bgFileLabel";
+            this.bgFileLabel.Size = new System.Drawing.Size(111, 13);
+            this.bgFileLabel.TabIndex = 12;
+            this.bgFileLabel.Text = "Map Background File:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +255,8 @@ namespace GoProjectEditor
         private System.Windows.Forms.TextBox mapPOSY;
         private System.Windows.Forms.TextBox mapPOSX;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label bgFileLabel;
+        private System.Windows.Forms.TextBox textBoxBackgroundFile;
     }
 }
 
