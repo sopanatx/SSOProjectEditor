@@ -63,10 +63,18 @@
             this.listBox8 = new System.Windows.Forms.ListBox();
             this.listBox9 = new System.Windows.Forms.ListBox();
             this.listBox10 = new System.Windows.Forms.ListBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.listBox11 = new System.Windows.Forms.ListBox();
+            this.listBox12 = new System.Windows.Forms.ListBox();
+            this.listBox13 = new System.Windows.Forms.ListBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.listBox14 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,6 +83,8 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -403,6 +413,62 @@
             this.listBox10.Size = new System.Drawing.Size(291, 316);
             this.listBox10.TabIndex = 2;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.listBox13);
+            this.tabPage5.Controls.Add(this.listBox12);
+            this.tabPage5.Controls.Add(this.listBox11);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1004, 559);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "NPC";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // listBox11
+            // 
+            this.listBox11.FormattingEnabled = true;
+            this.listBox11.Location = new System.Drawing.Point(6, 6);
+            this.listBox11.Name = "listBox11";
+            this.listBox11.Size = new System.Drawing.Size(202, 368);
+            this.listBox11.TabIndex = 0;
+            // 
+            // listBox12
+            // 
+            this.listBox12.FormattingEnabled = true;
+            this.listBox12.Location = new System.Drawing.Point(214, 6);
+            this.listBox12.Name = "listBox12";
+            this.listBox12.Size = new System.Drawing.Size(202, 368);
+            this.listBox12.TabIndex = 1;
+            // 
+            // listBox13
+            // 
+            this.listBox13.FormattingEnabled = true;
+            this.listBox13.Location = new System.Drawing.Point(422, 6);
+            this.listBox13.Name = "listBox13";
+            this.listBox13.Size = new System.Drawing.Size(202, 368);
+            this.listBox13.TabIndex = 2;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.listBox14);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1004, 559);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Map Object 2";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listBox14
+            // 
+            this.listBox14.FormattingEnabled = true;
+            this.listBox14.Location = new System.Drawing.Point(15, 92);
+            this.listBox14.Name = "listBox14";
+            this.listBox14.Size = new System.Drawing.Size(212, 394);
+            this.listBox14.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,6 +486,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -461,6 +529,12 @@
         private System.Windows.Forms.ListBox listBox8;
         private System.Windows.Forms.ListBox listBox9;
         private System.Windows.Forms.ListBox listBox10;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ListBox listBox13;
+        private System.Windows.Forms.ListBox listBox12;
+        private System.Windows.Forms.ListBox listBox11;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ListBox listBox14;
     }
 }
 

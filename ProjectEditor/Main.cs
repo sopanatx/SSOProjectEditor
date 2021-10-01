@@ -32,6 +32,10 @@ namespace ProjectEditor
             listBox8.Items.Clear();
             listBox9.Items.Clear();
             listBox10.Items.Clear();
+            listBox11.Items.Clear();
+            listBox12.Items.Clear();
+            listBox13.Items.Clear();
+            listBox14.Items.Clear();
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
@@ -239,7 +243,7 @@ namespace ProjectEditor
                             int mv2 = reader.ReadInt32();
                             str.FiersRead = reader.ReadBytes(0x80);
                             str.Decode();
-                          
+
                             listBox9.Items.Insert(i, str.Name);
 
                             str.FiersRead = reader.ReadBytes(0x80);
@@ -257,6 +261,125 @@ namespace ProjectEditor
                             int mv9 = reader.ReadInt32();
                             reader.ReadBytes(0x14);
 
+                        }
+                    }
+                    Console.WriteLine("====== NPC ======");
+                    strCount = reader.ReadInt32();
+                    if (strCount > 0)
+                    {
+                        for (int i = 0; i < strCount; i++)
+                        {
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            listBox11.Items.Insert(i, str.Name);
+
+                            Console.WriteLine("=== NPC  {0} {1}", reader.ReadInt32().ToString(), reader.ReadInt32().ToString());
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            listBox12.Items.Insert(i, str.Name);
+
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            listBox13.Items.Insert(i, str.Name);
+                            reader.ReadInt32();
+                            reader.ReadByte();
+                            reader.ReadInt16();
+                            reader.ReadInt16();
+                            reader.ReadInt32();
+                            reader.ReadBytes(0xC);
+                        }
+
+
+                    }
+                    //sub_971310
+                    Console.WriteLine("====== Unknown ======");
+                    strCount = reader.ReadInt32();
+                    if (strCount > 0)
+                    {
+
+                        for (int i = 0; i < strCount; i++)
+                        {
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("1 : {0}", str.Name);
+
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("2 : {0}", str.Name); str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("3 : {0}", str.Name);
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadByte();
+                            reader.ReadBytes(0x14);
+
+
+                        }
+                    }
+
+                    Console.WriteLine("====== Unknown 1 ======");
+                    strCount = reader.ReadInt32();
+                    if (strCount > 0)
+                    {
+                        for (int i = 0; i < strCount; i++)
+                        {
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("1 : {0}", str.Name);
+
+                            reader.ReadInt32();
+
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("2 : {0}", str.Name);
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("3 : {0}", str.Name);
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadByte();
+                            reader.ReadInt16();
+                            reader.ReadInt16();
+                            reader.ReadInt32();
+                            reader.ReadByte();
+                            reader.ReadInt32();
+
+                        }
+                    }
+                    Console.WriteLine("====== Unknown 2 ======");
+                    strCount = reader.ReadInt32();
+                    reader.ReadInt32();
+                    reader.ReadInt32();
+
+
+                    if (strCount > 0)
+                    {
+                        for (int i = 0; i < strCount; i++)
+                        {
+                            str.FiersRead = reader.ReadBytes(0x14);
+                            str.Decode();
+                            listBox14.Items.Insert(i, str.Name);
+
+
+                            reader.ReadInt32();
+                            reader.ReadByte();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
                         }
                     }
 
