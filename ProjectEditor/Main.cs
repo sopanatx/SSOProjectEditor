@@ -39,7 +39,7 @@ namespace ProjectEditor
                 string fullpath = openFileDialog1.FileName;
                 string directoryPath = Path.GetDirectoryName(fullpath);
                 string filename = Path.GetFileName(fullpath);
-                
+
                 ProjectHeader Project = new ProjectHeader();
                 try
                 {
@@ -59,7 +59,7 @@ namespace ProjectEditor
                     Project.MapType = reader.ReadInt32();
 
 
-                    //sub_96FFE0
+                    //sub_93CA40
                     str.FiersRead = reader.ReadBytes(0x80);
                     str.Decode();
                     Project.BackgroundFile = str.Name;
@@ -80,6 +80,7 @@ namespace ProjectEditor
                     BackgroundFile.Text = Project.BackgroundFile;
                     TileFile.Text = Project.TileFile;
                     MapFile.Text = Project.MapFile;
+                 
                     //////// OBJ
                     Project.ObjectCount = reader.ReadInt32();
 
@@ -106,29 +107,65 @@ namespace ProjectEditor
                         Console.WriteLine(MotFile);
                         listBox2.Items.Insert(i, MotFile);
                     }
-                    
+                    MotResourceCountLabel.Text = "Mot Resource Count : " + Project.MotCount.ToString();
+                    MotResourceCountLabel.Visible = true;
 
-               
+
+
+
+
+                    //==== sub_9702F0 ======== //
                     reader.ReadInt32();
                     reader.ReadInt32();
                     reader.ReadInt32();
-                    for (int i = 0; i < Project.MotCount; i++)
+                    string TilPOS = "";
+
+                    char ch3;
+
+                    while ((int)(ch3 = reader.ReadChar()) != 0) TilPOS = TilPOS + ch3;
+                    reader.ReadBytes(127 - TilPOS.Length);// acc 128
+                    listBox3.Items.Insert(0, TilPOS.ToString());
+
+
+                    string MapPOS = "";
+                    char ch4;
+                    while ((int)(ch4 = reader.ReadChar()) != 0) MapPOS = MapPOS + ch4;
+                    reader.ReadBytes(127 - MapPOS.Length);// acc 128
+                    listBox3.Items.Insert(1, MapPOS.ToString());
+
+
+
+                    reader.ReadInt32();
+
+                    string BgPOS = "";
+                    char ch5;
+                    while ((int)(ch5 = reader.ReadChar()) != 0) BgPOS = BgPOS + ch5;
+                    reader.ReadBytes(127 - BgPOS.Length);// acc 128
+                    listBox3.Items.Insert(2, BgPOS.ToString());
+
+                    // ======== sub_96FFB0
+                    int strCount = reader.ReadInt32();
+                    for(int i = 0; i < strCount; i++) 
                     {
-                        string MotTFile = "";
-                        char ch3;
-                        while ((int)(ch3 = reader.ReadChar()) != 0) MotTFile = MotTFile + ch3;
-                        reader.ReadBytes(127 - MotTFile.Length);// acc 128
-                        Console.WriteLine(MotTFile);
-                        listBox3.Items.Insert(i, MotTFile);
+
+                        str.FiersRead = reader.ReadBytes(0x80);
+                        str.Decode();
+
+                        reader.ReadBytes(0x10);
+                        reader.ReadInt32();
+                        reader.ReadInt32();
+                        reader.ReadInt32();
+                        reader.ReadInt32();
+                        Console.WriteLine(str.Name);
+
                     }
 
 
-                    MotResourceCountLabel.Text = "Mot Resource Count : " + Project.MotCount.ToString();
-                    MotResourceCountLabel.Visible = true;
+
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Failed to read file", "");
+                    MessageBox.Show("Failed to read file  " + ex.ToString(), "");
                 }
             }
         }
