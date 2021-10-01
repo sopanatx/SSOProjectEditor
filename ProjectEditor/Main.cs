@@ -25,6 +25,10 @@ namespace ProjectEditor
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            listBox5.Items.Clear();
+            listBox6.Items.Clear();
+            listBox7.Items.Clear();
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
@@ -92,7 +96,7 @@ namespace ProjectEditor
                         char ch1;
                         while ((int)(ch1 = reader.ReadChar()) != 0) SprFile = SprFile + ch1;
                         reader.ReadBytes(127 - SprFile.Length);// acc 128
-                        Console.WriteLine(SprFile);
+                  //      Console.WriteLine(SprFile);
                         listBox1.Items.Insert(i, SprFile);
                     }
 
@@ -104,7 +108,7 @@ namespace ProjectEditor
                         char ch2;
                         while ((int)(ch2 = reader.ReadChar()) != 0) MotFile = MotFile + ch2;
                         reader.ReadBytes(127 - MotFile.Length);// acc 128
-                        Console.WriteLine(MotFile);
+                      //  Console.WriteLine(MotFile);
                         listBox2.Items.Insert(i, MotFile);
                     }
                     MotResourceCountLabel.Text = "Mot Resource Count : " + Project.MotCount.ToString();
@@ -145,25 +149,82 @@ namespace ProjectEditor
 
                     // ======== sub_96FFB0
                     int strCount = reader.ReadInt32();
-                    for(int i = 0; i < strCount; i++) 
+                    if(strCount > 0)
                     {
+                        for (int i = 0; i < strCount; i++)
+                        {
 
-                        str.FiersRead = reader.ReadBytes(0x80);
-                        str.Decode();
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
 
-                        reader.ReadBytes(0x10);
-                        reader.ReadInt32();
-                        reader.ReadInt32();
-                        reader.ReadInt32();
-                        reader.ReadInt32();
-                        Console.WriteLine(str.Name);
+                            reader.ReadBytes(0x10);
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            reader.ReadInt32();
+                            listBox4.Items.Insert(i, str.Name);
+
+                        }
+                    }
+
+                    //======== sub_970110
+                    strCount = reader.ReadInt32();
+
+                    if(strCount > 0)
+                    {
+                        for(int i = 0; i < strCount; i++)
+                        {
+                            Console.WriteLine("====== {0} " , i);
+                            Console.WriteLine("Int 1 : {0}",reader.ReadInt32().ToString());
+                            Console.WriteLine("Int 2 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("Int 3 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("Int 4 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("======");
+
+                        }
+                    }
+
+
+                    ///============== sub_970710   Map Object
+                    strCount = reader.ReadInt32();
+                    if(strCount > 0)
+                    {
+                        for(int i = 0; i < strCount; i++)
+                        {
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            Console.WriteLine("====== {0} ", i);
+
+                         //   Console.WriteLine("Map OBJ 1 : {0}", str.Name);
+                            listBox5.Items.Insert(i, str.Name);
+
+                            Console.WriteLine("Int 1 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("Int 2 : {0}", reader.ReadInt32().ToString());
+
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                           // Console.WriteLine("Map OBJ 2 : {0}", str.Name);
+                            listBox6.Items.Insert(i, str.Name);
+
+                            str.FiersRead = reader.ReadBytes(0x80);
+                            str.Decode();
+                            listBox7.Items.Insert(i, str.Name);
+                            //Console.WriteLine("Map OBJ 3 : {0}", str.Name);
+
+                            Console.WriteLine("Int 3 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("Int 4 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("Int 5 : {0}", reader.ReadInt32().ToString());
+                            Console.WriteLine("Byte 6 : {0}", reader.ReadByte().ToString());
+                            Console.WriteLine("Byte 7 : {0}", reader.ReadBytes(0x14).ToString());
+                            Console.WriteLine("======");
+                        } 
+
 
                     }
 
 
-
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Failed to read file  " + ex.ToString(), "");
                 }

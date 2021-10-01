@@ -30,6 +30,12 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.MotResourceCountLabel = new System.Windows.Forms.Label();
+            this.SprResourceCountLabel = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.CurrentEditLabel = new System.Windows.Forms.Label();
             this.MapFileLabel = new System.Windows.Forms.Label();
             this.MapFile = new System.Windows.Forms.TextBox();
@@ -48,20 +54,21 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.SprResourceCountLabel = new System.Windows.Forms.Label();
-            this.MotResourceCountLabel = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.listBox7 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -70,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.listBox4);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.listBox3);
@@ -99,6 +107,60 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Map Info & Resource";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(909, 88);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(87, 30);
+            this.button2.TabIndex = 40;
+            this.button2.Text = "Link Bg File..";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(909, 52);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 30);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Link Til File..";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(494, 262);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(264, 251);
+            this.listBox3.TabIndex = 38;
+            // 
+            // MotResourceCountLabel
+            // 
+            this.MotResourceCountLabel.AutoSize = true;
+            this.MotResourceCountLabel.Location = new System.Drawing.Point(219, 231);
+            this.MotResourceCountLabel.Name = "MotResourceCountLabel";
+            this.MotResourceCountLabel.Size = new System.Drawing.Size(111, 13);
+            this.MotResourceCountLabel.TabIndex = 37;
+            this.MotResourceCountLabel.Text = "Resource Mot Count: ";
+            // 
+            // SprResourceCountLabel
+            // 
+            this.SprResourceCountLabel.AutoSize = true;
+            this.SprResourceCountLabel.Location = new System.Drawing.Point(219, 218);
+            this.SprResourceCountLabel.Name = "SprResourceCountLabel";
+            this.SprResourceCountLabel.Size = new System.Drawing.Size(109, 13);
+            this.SprResourceCountLabel.TabIndex = 36;
+            this.SprResourceCountLabel.Text = "Resource Spr Count: ";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(214, 262);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(264, 251);
+            this.listBox2.TabIndex = 35;
             // 
             // CurrentEditLabel
             // 
@@ -253,59 +315,50 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // listBox2
+            // listBox4
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(214, 262);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(264, 251);
-            this.listBox2.TabIndex = 35;
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(776, 262);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(208, 251);
+            this.listBox4.TabIndex = 41;
             // 
-            // SprResourceCountLabel
+            // tabPage3
             // 
-            this.SprResourceCountLabel.AutoSize = true;
-            this.SprResourceCountLabel.Location = new System.Drawing.Point(219, 218);
-            this.SprResourceCountLabel.Name = "SprResourceCountLabel";
-            this.SprResourceCountLabel.Size = new System.Drawing.Size(109, 13);
-            this.SprResourceCountLabel.TabIndex = 36;
-            this.SprResourceCountLabel.Text = "Resource Spr Count: ";
+            this.tabPage3.Controls.Add(this.listBox7);
+            this.tabPage3.Controls.Add(this.listBox6);
+            this.tabPage3.Controls.Add(this.listBox5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1004, 559);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Map Object";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // MotResourceCountLabel
+            // listBox5
             // 
-            this.MotResourceCountLabel.AutoSize = true;
-            this.MotResourceCountLabel.Location = new System.Drawing.Point(219, 231);
-            this.MotResourceCountLabel.Name = "MotResourceCountLabel";
-            this.MotResourceCountLabel.Size = new System.Drawing.Size(111, 13);
-            this.MotResourceCountLabel.TabIndex = 37;
-            this.MotResourceCountLabel.Text = "Resource Mot Count: ";
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.Location = new System.Drawing.Point(6, 6);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(193, 368);
+            this.listBox5.TabIndex = 0;
             // 
-            // listBox3
+            // listBox6
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(494, 262);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(264, 251);
-            this.listBox3.TabIndex = 38;
+            this.listBox6.FormattingEnabled = true;
+            this.listBox6.Location = new System.Drawing.Point(205, 6);
+            this.listBox6.Name = "listBox6";
+            this.listBox6.Size = new System.Drawing.Size(193, 368);
+            this.listBox6.TabIndex = 1;
             // 
-            // button1
+            // listBox7
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(909, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 30);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Link Til File..";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(909, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 30);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "Link Bg File..";
-            this.button2.UseVisualStyleBackColor = true;
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.Location = new System.Drawing.Point(404, 6);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(193, 368);
+            this.listBox7.TabIndex = 2;
             // 
             // Main
             // 
@@ -322,6 +375,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -354,6 +408,11 @@
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.ListBox listBox6;
     }
 }
 
